@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.action.extension" value="do,action," />
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<constant name="struts.objectFactory" value="spring" />
+    <package name="default" namespace="/" extends="struts-default">
+    	<action name="user_*" class="userAction" method="{1}">
+    		<result name="redirect">${url}</result>
+    	</action>
+    	<action name="resource_*" class="resourceAction" method="{1}">
+    		<result name="redirect">${url}</result>
+    	</action>
+    	<action name="role_*" class="roleAction" method="{1}">
+    		<result name="redirect">${url}</result>
+    	</action>
+    	<action name="remind_*" class="remindAction" method="{1}">
+    		<result name="redirect">${url}</result>
+    	</action>
+    	<action name="stu_*" class="studentAction" method="{1}">
+    		<result name="redirect">${url}</result>
+    	</action>
+    </package>
+</struts>
